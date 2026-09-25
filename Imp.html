@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>A Little Apology ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Inter:wght@400;500;600&display=swap');
+
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Inter,sans-serif;background:#080817;color:#fff}
+body{overflow-x:hidden}
+button{font:inherit}
+
+.scene{
+  min-height:100vh; position:relative; overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(255,82,150,.18), transparent 30%),
+    radial-gradient(circle at 15% 75%, rgba(138,73,255,.18), transparent 28%),
+    linear-gradient(160deg,#070817 0%,#170c2b 48%,#0b0718 100%);
+}
+.scene::before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.55;
+  background-image:
+    radial-gradient(circle,rgba(255,255,255,.9) 1px,transparent 1.5px),
+    radial-gradient(circle,rgba(255,180,220,.7) 1px,transparent 1.5px);
+  background-size:85px 85px,137px 137px;background-position:10px 20px,40px 70px;
+}
+.glow{position:absolute;border-radius:50%;filter:blur(55px);pointer-events:none}
+.g1{width:360px;height:360px;background:rgba(255,42,115,.12);top:8%;left:25%}
+.g2{width:330px;height:330px;background:rgba(132,73,255,.12);bottom:4%;right:8%}
+
+.content{position:relative;z-index:2;width:min(1050px,92%);margin:auto;padding:48px 0 70px;text-align:center}
+.kicker{font-family:"Great Vibes",cursive;font-size:clamp(28px,4vw,42px);color:#ffd1e6;margin-bottom:5px}
+h1{font-family:"Cormorant Garamond",serif;font-size:clamp(48px,8vw,88px);line-height:.9;margin:0;color:#fff}
+h1 span{display:block;color:#ff9fc5;font-family:"Great Vibes",cursive;font-weight:400;font-size:1.1em;line-height:1.05}
+.subtitle{max-width:720px;margin:25px auto 30px;color:#e9dce6;font-size:16px;line-height:1.8}
+
+.heart-wrap{position:relative;width:310px;height:300px;margin:15px auto 20px;display:grid;place-items:center}
+.ring{position:absolute;width:270px;height:270px;border:1px solid rgba(255,149,194,.4);border-radius:50%;animation:ring 3s ease-in-out infinite}
+.ring:nth-child(2){width:300px;height:300px;animation-delay:.7s;opacity:.45}
+@keyframes ring{0%,100%{transform:scale(.9);opacity:.2}50%{transform:scale(1.06);opacity:.8}}
+.main-heart{
+  width:205px;height:185px;position:relative;border:0;cursor:pointer;
+  transform:rotate(-45deg);border-radius:30px 0 30px 0;
+  background:linear-gradient(145deg,#ffb3d0 0%,#ff4f8e 38%,#df1f69 100%);
+  box-shadow:0 0 35px rgba(255,63,133,.75),inset 8px 8px 20px rgba(255,255,255,.25);
+  animation:beat 1.25s ease-in-out infinite;
+}
+.main-heart::before,.main-heart::after{content:"";position:absolute;width:205px;height:185px;border-radius:50%;background:inherit}
+.main-heart::before{top:-102px;left:0}
+.main-heart::after{left:102px;top:0}
+.main-heart .heart-text{
+  position:absolute;z-index:3;transform:rotate(45deg);width:250px;left:-22px;top:57px;
+  font-family:"Great Vibes",cursive;font-size:40px;color:#fff;text-shadow:0 2px 12px rgba(80,0,30,.35)
+}
+@keyframes beat{0%,100%{transform:rotate(-45deg) scale(1)}15%{transform:rotate(-45deg) scale(1.08)}30%{transform:rotate(-45deg) scale(1)}45%{transform:rotate(-45deg) scale(1.06)}60%{transform:rotate(-45deg) scale(1)}}
+.hint{color:#ffc5dd;font-family:"Cormorant Garamond",serif;font-size:21px;margin-top:4px}
+
+.float-heart{
+  position:absolute;bottom:-60px;z-index:1;pointer-events:auto;cursor:pointer;
+  color:#ff7eaf;text-shadow:0 0 18px rgba(255,68,139,.8);
+  animation:floatUp linear forwards;
+  opacity:0;
+  user-select:none;
+}
+@keyframes floatUp{0%{transform:translateY(0) scale(.65) rotate(-8deg);opacity:0}10%{opacity:.85}100%{transform:translateY(-115vh) scale(1.1) rotate(12deg);opacity:0}}
+
+.promise-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:42px}
+.promise{
+  padding:18px 12px;border:1px solid rgba(255,180,213,.2);border-radius:20px;
+  background:rgba(255,255,255,.055);backdrop-filter:blur(12px);color:#f7dce9;
+}
+.promise b{display:block;font-family:"Cormorant Garamond",serif;font-size:22px;margin-bottom:5px;color:#fff}
+.promise small{font-size:12px;color:#cdb8c6}
+
+.overlay{
+  position:fixed;inset:0;z-index:20;display:none;align-items:center;justify-content:center;
+  padding:20px;background:rgba(5,3,15,.72);backdrop-filter:blur(14px);
+}
+.overlay.show{display:flex}
+.envelope-stage{width:min(700px,94vw);text-align:center;animation:appear .7s ease both}
+@keyframes appear{from{opacity:0;transform:translateY(25px) scale(.96)}to{opacity:1;transform:none}}
+.envelope{
+  position:relative;height:330px;border-radius:18px;overflow:hidden;
+  background:linear-gradient(145deg,#ffc9df,#f487b3);box-shadow:0 30px 80px rgba(0,0,0,.45),0 0 50px rgba(255,91,153,.25);
+}
+.envelope:before{
+  content:"";position:absolute;left:0;right:0;top:0;height:55%;background:#ffb0d0;
+  clip-path:polygon(0 0,100% 0,50% 82%);
+}
+.seal{position:absolute;z-index:3;left:50%;top:47%;transform:translate(-50%,-50%);
+  width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#e42b70;
+  box-shadow:0 5px 20px rgba(100,0,40,.3);font-size:25px}
+.envelope-label{position:absolute;z-index:2;top:105px;left:0;right:0;color:#7b183e;font-family:"Great Vibes",cursive;font-size:43px}
+.open-btn,.close-btn{
+  margin-top:22px;border:1px solid rgba(255,195,220,.45);border-radius:999px;padding:12px 25px;
+  background:rgba(255,255,255,.08);color:#fff;cursor:pointer;backdrop-filter:blur(8px)
+}
+.open-btn{background:linear-gradient(90deg,#ff4f8f,#d92971);box-shadow:0 10px 30px rgba(235,39,111,.25)}
+.letter{
+  width:min(760px,94vw);max-height:85vh;overflow:auto;text-align:left;
+  background:linear-gradient(145deg,#fff7fb,#ffe7f1);color:#351523;border-radius:24px;padding:38px;
+  box-shadow:0 30px 100px rgba(0,0,0,.5);position:relative
+}
+.letter h2{text-align:center;font-family:"Great Vibes",cursive;font-size:48px;color:#c92668;margin:0 0 20px}
+.letter p{font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.55;margin:0 0 16px}
+.letter .highlight{color:#c51f62;font-weight:700}
+.close-x{position:absolute;right:18px;top:12px;border:0;background:none;font-size:28px;color:#9c4567;cursor:pointer}
+.next-btn{display:block;margin:25px auto 0;background:#c92668;color:#fff;border:0;padding:13px 24px;border-radius:999px;cursor:pointer}
+
+.message-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:10px}
+.message-heart{
+  min-height:125px;border:1px solid rgba(255,150,196,.35);border-radius:22px;
+  background:linear-gradient(145deg,rgba(255,85,145,.22),rgba(111,45,135,.16));
+  color:#fff;cursor:pointer;padding:18px;font-family:"Cormorant Garamond",serif;font-size:21px;
+  transition:.25s;box-shadow:0 10px 25px rgba(0,0,0,.15)
+}
+.message-heart:hover{transform:translateY(-5px);background:rgba(255,90,150,.28)}
+.final{text-align:center;padding:40px 10px}
+.final .big{font-family:"Great Vibes",cursive;font-size:55px;color:#ff9fc5}
+.final p{font-family:"Cormorant Garamond",serif;font-size:24px;line-height:1.5;color:#ffe8f2}
+
+.toast{
+ position:fixed;z-index:40;left:50%;bottom:28px;transform:translateX(-50%) translateY(20px);
+ width:min(440px,88vw);padding:20px 22px;border:1px solid rgba(255,180,215,.35);
+ border-radius:20px;background:rgba(35,13,31,.92);backdrop-filter:blur(15px);
+ box-shadow:0 20px 50px rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:.35s;text-align:center
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast b{display:block;color:#ffb3d0;font-family:"Cormorant Garamond",serif;font-size:25px;margin-bottom:5px}
+.toast span{color:#f6dfe9;font-size:14px;line-height:1.5}
+
+@media(max-width:700px){
+ .content{padding-top:34px}.subtitle{font-size:14px}
+ .heart-wrap{transform:scale(.86);margin:-2px auto -5px}
+ .promise-row{grid-template-columns:repeat(2,1fr)}
+ .message-grid{grid-template-columns:1fr 1fr}
+ .letter{padding:28px 22px}.letter p{font-size:19px}
+}
+@media(max-width:450px){
+ .promise-row{grid-template-columns:1fr 1fr;gap:9px}.promise{padding:14px 8px}
+ .promise b{font-size:19px}.message-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<main class="scene" id="scene">
+  <div class="glow g1"></div><div class="glow g2"></div>
+
+  <section class="content">
+    <div class="kicker">To My Special Person ♡</div>
+    <h1>I MESSED UP <span>And I'm Truly Sorry</span></h1>
+    <p class="subtitle">
+      I said things I should never have said. Especially calling you
+      <b>“Ghamandi”</b> and saying that you had done nothing for me.
+      That was a huge blunder, and I want to take responsibility for it.
+    </p>
+
+    <div class="heart-wrap">
+      <div class="ring"></div><div class="ring"></div>
+      <button class="main-heart" id="mainHeart" aria-label="Open my apology">
+        <span class="heart-text">Click Me<br><small>♡</small></span>
+      </button>
+    </div>
+    <div class="hint">Click the heart to read what I really want to say ❤️</div>
+
+    <div class="promise-row">
+      <div class="promise"><b>My Mistake</b><small>I accept that I was wrong.</small></div>
+      <div class="promise"><b>My Regret</b><small>I truly regret those words.</small></div>
+      <div class="promise"><b>My Gratitude</b><small>I see how much you do for me.</small></div>
+      <div class="promise"><b>My Promise</b><small>I will be more careful.</small></div>
+    </div>
+  </section>
+</main>
+
+<div class="overlay" id="envelopeOverlay">
+  <div class="envelope-stage">
+    <div class="envelope">
+      <div class="envelope-label">A Special Message<br>For You ♡</div>
+      <div class="seal">♥</div>
+    </div>
+    <button class="open-btn" id="openLetter">Open My Heart 💌</button>
+    <button class="close-btn" onclick="closeOverlay('envelopeOverlay')">Maybe later</button>
+  </div>
+</div>
+
+<div class="overlay" id="letterOverlay">
+  <article class="letter">
+    <button class="close-x" onclick="closeOverlay('letterOverlay')">×</button>
+    <h2>My Love ❤️</h2>
+    <p>I messed up. And I am genuinely, deeply sorry.</p>
+    <p>I said <span class="highlight">“Ghamandi”</span>, and I also said that you have done nothing for me.</p>
+    <p>That was a <span class="highlight">huge blunder</span>. There is no excuse for those words. I take full responsibility for saying them.</p>
+    <p>The truth is the complete opposite. <b>You have done so much for me.</b></p>
+    <p>Whenever I go to play cricket, you never fight with me about it. You always support me. Whenever I feel low, you are there for me. Whenever I need someone, you are available for me.</p>
+    <p>You listen to me, understand me, support me and stand by me. You have done a lot for me, and I know I don't always say it enough.</p>
+    <p>So saying that you have done nothing was not only wrong — it ignored so many things you have done for me. I am truly sorry for that.</p>
+    <p>You didn't deserve those words. I value you, I love you, and I am genuinely grateful to have you in my life.</p>
+    <p>I promise to be more careful with my words and to appreciate your love and support instead of taking it for granted.</p>
+    <p style="text-align:center;font-family:'Great Vibes',cursive;font-size:34px;color:#c92668">I'm really sorry. ❤️</p>
+    <button class="next-btn" id="showMessages">There is something else I want you to know →</button>
+  </article>
+</div>
+
+<div class="overlay" id="messagesOverlay">
+  <div class="letter" style="background:linear-gradient(145deg,#180d24,#2a1030);color:#fff">
+    <button class="close-x" style="color:#ffb3d0" onclick="closeOverlay('messagesOverlay')">×</button>
+    <h2 style="color:#ff9fc5">A Few Things I Mean ❤️</h2>
+    <div class="message-grid">
+      <button class="message-heart" data-title="You always support me" data-text="Whenever I go to play cricket, you never fight with me. You support me and let me enjoy something I love. Thank you for that.">❤️<br>You always support me</button>
+      <button class="message-heart" data-title="You are there when I feel low" data-text="When I feel low, you are one of the people I can turn to. Your presence means more to me than I sometimes show.">❤️<br>You are there when I feel low</button>
+      <button class="message-heart" data-title="You have done so much for me" data-text="I was completely wrong to say otherwise. I know there are many things you have done for me, and I am grateful for them.">❤️<br>You have done so much for me</button>
+      <button class="message-heart" data-title="I shouldn't have said that" data-text="Those words were hurtful and unfair. I wish I had paused before speaking. I am sorry for making you hear them from me.">❤️<br>I shouldn't have said that</button>
+      <button class="message-heart" data-title="I value you" data-text="I don't want one terrible moment to hide all the good you bring into my life. I value you, your time, your patience and your support.">❤️<br>I value you</button>
+      <button class="message-heart" data-title="I want to do better" data-text="An apology should come with change. I will work on being more thoughtful with my words and more appreciative of you.">❤️<br>I want to do better</button>
+    </div>
+    <button class="next-btn" id="finalBtn">One last thing… ❤️</button>
+  </div>
+</div>
+
+<div class="overlay" id="finalOverlay">
+  <div class="letter final" style="background:linear-gradient(145deg,#fff6fb,#ffe4ef)">
+    <div class="big">I'm Really Sorry ❤️</div>
+    <p>I can't take those words back.<br>But I can learn from them.</p>
+    <p>I will be more careful with my words.<br>I will appreciate you more.<br>I will never take your support for granted.</p>
+    <p><b>Take all the time you need.</b><br>You don't have to respond right away.</p>
+    <p style="font-family:'Great Vibes',cursive;color:#c92668;font-size:38px">Thank you for always being there for me.</p>
+    <button class="next-btn" onclick="closeOverlay('finalOverlay')">Close with ❤️</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"><b id="toastTitle"></b><span id="toastText"></span></div>
+
+<script>
+const scene = document.getElementById('scene');
+
+function spawnHeart(){
+  const h=document.createElement('div');
+  h.className='float-heart';
+  h.innerHTML=['♥','♡','❤','💕'][Math.floor(Math.random()*4)];
+  h.style.left=(Math.random()*100)+'%';
+  h.style.fontSize=(18+Math.random()*28)+'px';
+  h.style.animationDuration=(6+Math.random()*7)+'s';
+  h.addEventListener('click',()=>{
+    showToast('A little reminder ❤️','I am sorry. I value you, I appreciate you, and I never want to hurt you with careless words.');
+    h.remove();
+  });
+  scene.appendChild(h);
+  setTimeout(()=>h.remove(),14000);
+}
+setInterval(spawnHeart,650);
+for(let i=0;i<9;i++) setTimeout(spawnHeart,i*180);
+
+function openOverlay(id){document.getElementById(id).classList.add('show')}
+function closeOverlay(id){document.getElementById(id).classList.remove('show')}
+
+document.getElementById('mainHeart').addEventListener('click',()=>{
+  const heart=document.getElementById('mainHeart');
+  heart.style.animation='burst .6s ease';
+  setTimeout(()=>{heart.style.animation='beat 1.25s ease-in-out infinite';openOverlay('envelopeOverlay')},420);
+});
+
+document.getElementById('openLetter').addEventListener('click',()=>{
+  closeOverlay('envelopeOverlay'); setTimeout(()=>openOverlay('letterOverlay'),350);
+});
+document.getElementById('showMessages').addEventListener('click',()=>{
+  closeOverlay('letterOverlay'); setTimeout(()=>openOverlay('messagesOverlay'),300);
+});
+document.getElementById('finalBtn').addEventListener('click',()=>{
+  closeOverlay('messagesOverlay'); setTimeout(()=>openOverlay('finalOverlay'),300);
+});
+
+document.querySelectorAll('.message-heart').forEach(btn=>{
+  btn.addEventListener('click',()=>showToast(btn.dataset.title,btn.dataset.text));
+});
+
+function showToast(title,text){
+  const toast=document.getElementById('toast');
+  document.getElementById('toastTitle').textContent=title;
+  document.getElementById('toastText').textContent=text;
+  toast.classList.add('show');
+  clearTimeout(window.toastTimer);
+  window.toastTimer=setTimeout(()=>toast.classList.remove('show'),5000);
+}
+
+document.addEventListener('keydown',e=>{
+ if(e.key==='Escape') document.querySelectorAll('.overlay.show').forEach(x=>x.classList.remove('show'));
+});
+</script>
+</body>
+</html>
